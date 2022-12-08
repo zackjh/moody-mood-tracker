@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    New Entry
+
+{% endblock %}
+
+{% block main %}
+
+    <form class="text-center" action="/new" method="post">
+        <div class="mt-3">
+            Date
+            <input name="date" required type="date">
+        </div>
+        <div class="mt-1">
+            Mood 1 (0-5)
+            <input min="0" max="5" name="mood_1" required type="number">
+        </div>
+        <div class="mt-1">
+            Mood 2 (0-5)
+            <input min="0" max="5" name="mood_2" required type="number">
+        </div>
+        <div class="mt-1">
+            Mood 3 (0-5)
+            <input min="0" max="5" name="mood_3" required type="number">
+        </div>
+        <div class="mt-1">
+            Sleep Quality (0-5)
+            <input min="0" max="5" name="sleep" required type="number">
+        </div>
+        <div class="mt-1">
+            Health Quality (0-5)
+            <input min="0" max="5" name="health" required type="number">
+        </div>
+        <div class="mt-1">
+            Work Satisfaction (0-5)
+            <input min="0" max="5" name="work" required type="number">
+        </div>
+        <div class="mt-1">
+            Remarks
+            <input name="remarks" type="text">
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" type="submit">Add New Entry</button>
+        </div>
+    </form>
+
+{% endblock %}

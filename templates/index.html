@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Homepage
+
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="text-center mt-3">Your Past Moods</h1>
+    <div class="table-responsive-lg mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-nowrap text-center">Date</th>
+                    <th scope="col" class="text-nowrap text-center">Day</th>
+                    <th scope="col" class="text-nowrap text-center">Mood 1</th>
+                    <th scope="col" class="text-nowrap text-center">Mood 2</th>
+                    <th scope="col" class="text-nowrap text-center">Mood 3</th>
+                    <th scope="col" class="text-nowrap text-center">Sleep Quality</th>
+                    <th scope="col" class="text-nowrap text-center">Health Quality</th>
+                    <th scope="col" class="text-nowrap text-center">Work Satisfaction</th>
+                    <th scope="col" class="text-center">Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td class="text-nowrap text-center">{{ row["date"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["day"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["mood_1"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["mood_2"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["mood_3"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["sleep"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["health"] }}</td>
+                        <td class="text-nowrap text-center">{{ row["work"] }}</td>
+                        <td>{{ row["remarks"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}

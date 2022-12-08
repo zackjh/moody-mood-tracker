@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Delete Entry
+
+{% endblock %}
+
+{% block main %}
+
+    <form class="text-center" action="/delete_confirm" method="post">
+        <input type="hidden" name="date" value="{{ row['date'] }}">
+        <div class="mt-3">
+            Date: {{ row["date"] }}
+        </div>
+        <div class="mt-1">
+            Mood 1 (0-5): {{ row["mood_1"] }}
+        </div>
+        <div class="mt-1">
+            Mood 2 (0-5): {{ row["mood_2"] }}
+        </div>
+        <div class="mt-1">
+            Mood 3 (0-5): {{ row["mood_3"] }}
+        </div>
+        <div class="mt-1">
+            Sleep Quality (0-5): {{ row["sleep"] }}
+        </div>
+        <div class="mt-1">
+            Health Quality (0-5): {{ row["health"] }}
+        </div>
+        <div class="mt-1">
+            Work Satisfaction (0-5): {{ row["work"] }}
+        </div>
+        <div class="mt-1">
+            Remarks: {{ row["remarks"] }}
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" type="submit">Delete Entry</button>
+        </div>
+
+{% endblock %}

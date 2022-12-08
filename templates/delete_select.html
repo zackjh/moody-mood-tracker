@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Delete Entry
+
+{% endblock %}
+
+{% block main %}
+
+    <form class="text-center" action="/delete_select" method="post">
+        <div class="mt-3">
+            Select Date of Entry to be Deleted:
+            <br>
+            <select class="mt-2" name ="date">
+                {% for row in rows %}
+                    <option value="{{ row['date'] }}">{{ row["date"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" type="submit">Find Entry</button>
+        </div>
+    </form>
+
+{% endblock %}
